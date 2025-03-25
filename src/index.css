@@ -1,0 +1,228 @@
+/* red-hat-text-regular - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Red Hat Text";
+  font-style: normal;
+  font-weight: 400;
+  src: url("./fonts/red-hat-text-v18-latin-regular.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* red-hat-text-600 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Red Hat Text";
+  font-style: normal;
+  font-weight: 600;
+  src: url("./fonts/red-hat-text-v18-latin-600.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* red-hat-text-700 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Red Hat Text";
+  font-style: normal;
+  font-weight: 700;
+  src: url("./fonts/red-hat-text-v18-latin-700.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+:root {
+  /* Colors */
+  --color-red: #c7380f;
+
+  --color-rose-900: #260f08;
+  --color-rose-500: #87635a;
+  --color-rose-400: #ad8a85;
+  --color-rose-300: #caafa7;
+  --color-rose-100: #f5eeec;
+  --color-rose-50: #fcf8f6;
+
+  --color-green: #1ea575;
+
+  --color-black: #000000;
+  --color-white: #ffffff;
+
+  /* Typography */
+  --font-primary: "Red Hat Text", sans-serif;
+
+  --font-size-preset-1: 5.6rem; /* 56px */
+  --line-height-preset-1: 1.209; /* 120.9% line-height */
+  --letter-spacing-preset-1: 0;
+
+  --font-size-preset-2: 2.4rem; /* 24px */
+  --line-height-preset-2: 1.25; /* 125% line-height */
+  --letter-spacing-preset-2: 0;
+
+  --font-size-preset-3: 1.6rem; /* 16px */
+  --line-height-preset-3: 1.5; /* 150% line-height */
+  --letter-spacing-preset-3: 0;
+
+  --font-size-preset-4: 1.4rem; /* 14px */
+  --line-height-preset-4: 1.5; /* 150% line-height */
+  --letter-spacing-preset-4: 0;
+}
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+  height: 100%;
+  scroll-behavior: smooth;
+}
+
+a {
+  display: inline-block;
+  text-decoration: none;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+img {
+  display: flex;
+  object-fit: cover;
+}
+
+body {
+  font-family: var(--font-primary);
+  background-color: var(--color-rose-50);
+}
+
+.btn {
+  background-color: transparent;
+  cursor: pointer;
+  border-radius: 999px;
+  border: 0;
+  font-family: inherit;
+}
+
+.container {
+  width: 100%;
+  max-width: 1276px;
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+.grid-container {
+  padding-top: 8.8rem;
+  padding-bottom: 8.8rem;
+  display: grid;
+  grid-template-columns: 67.5% calc(32.5% - 3.2rem);
+  gap: 3.2rem;
+}
+
+.desserts-title {
+  font-size: var(--font-size-preset-1);
+  line-height: var(--line-height-preset-1);
+  margin-bottom: 3.2rem;
+}
+
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2.4rem;
+}
+
+.desserts-card-image {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.desserts-card-category {
+  color: var(--color-rose-500);
+  font-size: var(--font-size-preset-4);
+  line-height: var(--line-height-preset-4);
+  font-weight: 400;
+  margin-top: 2rem;
+  margin-bottom: 4px;
+}
+
+.desserts-card-name {
+  color: var(--color-rose-900);
+  font-size: var(--font-size-preset-3);
+  line-height: var(--line-height-preset-3);
+  font-weight: 600;
+  margin-bottom: 2.4px;
+}
+
+.desserts-card-price {
+  font-size: var(--font-size-preset-3);
+  line-height: var(--line-height-preset-3);
+  color: var(--color-red);
+  font-weight: 600;
+}
+
+.buttons-wrapper {
+  justify-self: center;
+  align-self: center;
+  margin-top: -22.8px;
+}
+
+.add-to-card-btn-wrapper {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  font-weight: 600;
+}
+
+.add-to-card-btn {
+  border: 2px solid var(--color-rose-400);
+  padding: 1.2rem 2.8rem;
+  transition: 0.3s;
+  background-color: var(--color-white);
+
+  &:hover {
+    border-color: var(--color-red);
+  }
+}
+
+.add-to-card-btn:hover .add-to-card-btn-wrapper {
+  color: var(--color-red);
+}
+
+.amount-wrapper {
+  display: flex;
+  align-items: center;
+  padding: 1.2rem 2.8rem;
+  align-items: center;
+  background-color: var(--color-red);
+  border-radius: 999px;
+  width: 160px;
+  height: 44px;
+  border: 1px solid var(--color-red);
+}
+
+.amount-title {
+  color: var(--color-white);
+  font-size: var(--font-size-preset-4);
+  line-height: var(--line-height-preset-4);
+  font-weight: 600;
+}
+
+.decrement {
+  border: 0;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 2px solid var(--color-white);
+  background-color: #c7380f;
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.increment {
+  border: 0;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 2px solid var(--color-white);
+  background-color: #c7380f;
+  color: #ffffff;
+}
