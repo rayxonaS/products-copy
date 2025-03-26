@@ -1,9 +1,11 @@
 import { useGlobalContext } from "../hooks/useGlobalContext";
+import { useState } from "react";
 
 function Product({ d }) {
   const { dispatch, cart } = useGlobalContext();
   const { id, image, category, name, price } = d;
   const alreadyAdded = cart.find((d) => d.id === id);
+
   return (
     <div className="desserts-card">
       <picture>
@@ -11,7 +13,12 @@ function Product({ d }) {
         <source media="(min-width:800px )" srcSet={image.tablet} />
         <source media="(min-width:400px )" srcSet={image.mobile} />
 
-        <img className="desserts-card-image" src={image.thumbnail} alt="" />
+        <img
+          onClick={() => setShowModal(true)}
+          className="desserts-card-image"
+          src={image.thumbnail}
+          alt=""
+        />
       </picture>
       <div className="buttons-wrapper">
         {!alreadyAdded && (
@@ -31,8 +38,8 @@ function Product({ d }) {
           </button>
         )}
         {alreadyAdded && (
-          <>
-            <button className=" amount-wrapper">
+          <div className=" wrapper">
+            <div className=" amount-wrapper">
               <button
                 onClick={() => {
                   if (alreadyAdded.amount == 1) {
@@ -52,8 +59,8 @@ function Product({ d }) {
               >
                 +
               </button>
-            </button>
-          </>
+            </div>
+          </div>
         )}
       </div>
       <div className="desserts-card-body">
